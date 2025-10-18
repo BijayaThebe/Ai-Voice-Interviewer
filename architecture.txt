@@ -1,0 +1,52 @@
+voice-ai-interviewer/
+│
+├── app/
+│   ├── __init__.py                 # Application factory
+│   ├── routes.py                   # HTTP routes
+│   ├── events.py                   # SocketIO event handlers
+│   ├── llm/
+│   │   ├── __init__.py
+│   │   ├── providers.py            # LLM provider functions
+│   │   └── utils.py                # Shared utilities (e.g., sanitize_input)
+│   └── templates/
+│       └── index.html
+│
+├── instance/
+│   └── config.py                   # (Optional) Instance-specific config
+│
+├── .env                            # Environment variables (e.g., SECRET_KEY)
+├── requirements.txt
+├── run.py                          # Entry point
+└── README.md
+
+
+
+
+
+
+
+voice-ai-interviewer/
+│
+├── app/
+│   ├── __init__.py                 
+│   ├── routes.py                   
+│   ├── events.py                   ← **MAIN INTEGRATION POINT**
+│   ├── llm/
+│   │   ├── __init__.py
+│   │   ├── providers.py            
+│   │   ├── utils.py                
+│   │   └── **prompt_engine.py**    ← **NEW**: Human-like prompt templates
+│   ├── **conversation/             ← NEW**: Manages interview state & memory
+│   │   ├── __init__.py
+│   │   ├── memory.py               ← Tracks context, follow-ups, contradictions
+│   │   └── thinking_simulator.py   ← Simulates "thinking" delays & analysis
+│   └── templates/
+│       └── index.html
+│
+├── instance/
+│   └── config.py                   
+│
+├── .env                            
+├── requirements.txt
+├── run.py                          
+└── README.md
