@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Voice AI Interviewer
 
 ## Setup
@@ -13,3 +14,7 @@
 
 ## Structure
 Refer to the folder tree in the project root.
+=======
+# Ai-Voice-Interviewer
+Ai Powered Voice Interview System
+>>>>>>> 0c453280e0bc3390b3a33608ed7a929d9aadbf7c
