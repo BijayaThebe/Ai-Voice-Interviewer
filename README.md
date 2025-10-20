@@ -3,9 +3,10 @@
    The Voice AI Interviewer is an intelligent, voice-first application that simulates realistic job interviews using large language models (LLMs) and dynamic conversation management. Designed with a clean, modular architecture, it goes beyond simple Q&A by maintaining context, detecting inconsistencies, and generating thoughtful follow-up questions—just like a human interviewer would.
 
 At its core, the system uses events.py as the main integration point, coordinating voice input/output, LLM responses, and real-time conversation logic. The new conversation/ module handles interview state, memory, and even simulates natural “thinking” pauses to create a more authentic experience. Meanwhile, prompt_engine.py provides carefully designed, human-like prompts that guide the AI toward engaging, relevant, and adaptive dialogue.
-
-<img width="1066" height="896" alt="image" src="https://github.com/user-attachments/assets/93fbd0d2-b2a8-4a6e-88af-5d9b43b36155" />
-<img width="767" height="839" alt="image" src="https://github.com/user-attachments/assets/dab186ce-892e-4787-a18f-76db880baa2b" />
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/93fbd0d2-b2a8-4a6e-88af-5d9b43b36155" alt="Diagram 1" width="48%" />
+  <img src="https://github.com/user-attachments/assets/dab186ce-892e-4787-a18f-76db880baa2b" alt="Diagram 2" width="48%" />
+</p>
 
 # 🚨 Things to Remember
 ###  1. Render.com Deployment (Test URL Only)
