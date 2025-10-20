@@ -4,8 +4,8 @@
 
 At its core, the system uses events.py as the main integration point, coordinating voice input/output, LLM responses, and real-time conversation logic. The new conversation/ module handles interview state, memory, and even simulates natural “thinking” pauses to create a more authentic experience. Meanwhile, prompt_engine.py provides carefully designed, human-like prompts that guide the AI toward engaging, relevant, and adaptive dialogue.
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/93fbd0d2-b2a8-4a6e-88af-5d9b43b36155" alt="Diagram 1" width="48%" />
-  <img src="https://github.com/user-attachments/assets/dab186ce-892e-4787-a18f-76db880baa2b" alt="Diagram 2" width="48%" />
+  <img src="https://github.com/user-attachments/assets/93fbd0d2-b2a8-4a6e-88af-5d9b43b36155" alt="Diagram 1" height="400px" />
+  <img src="https://github.com/user-attachments/assets/dab186ce-892e-4787-a18f-76db880baa2b" alt="Diagram 2" height="400px" />
 </p>
 
 # 🚨 Things to Remember
