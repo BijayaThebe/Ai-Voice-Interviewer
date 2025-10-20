@@ -46,46 +46,56 @@ python run.py
 ## Project Architecture Structure
 ```mermaid
 graph TD
-    subgraph "Voice AI Interviewer"
-        direction TB
+    %% === External Actors ===
+    User["User\n(Voice In/Out)"]
 
-        subgraph "Core Application (app/)"
-            Events["events.py\n>Main Integration Point"] 
-            Routes["routes.py"]
-            LLM["llm/"]
-            Conversation["conversation/\n>Interview State & Memory"]
-            Templates["templates/\n>index.html"]
-        end
+    %% === Frontend ===
+    Frontend["Frontend\n(index.html + JS\nWebRTC/MediaRecorder)"]
 
-        subgraph "LLM Module (app/llm/)"
-            Providers["providers.py\n>LLM API Integration"]
-            PromptEngine["prompt_engine.py\n>Human-like Prompt Templates"]
-            Utils["utils.py"]
-        end
+    %% === Core Backend ===
+    WebServer["Flask Web Server\n(run.py)"]
+    Routes["routes.py\n(HTTP Endpoints)"]
+    Events["events.py\n>Main Orchestrator\n(Async Event Hub)"]
 
-        subgraph "Conversation Engine (app/conversation/)"
-            Memory["memory.py\n>Tracks context,\nfollow-ups, contradictions"]
-            Thinking["thinking_simulator.py\n>Simulates 'thinking' delays\n& response analysis"]
-        end
+    %% === Conversation Subsystem ===
+    Memory["memory.py\n>Interview state,\n>follow-ups,\n>contradiction tracking"]
+    Thinking["thinking_simulator.py\n>Simulated latency\n>Response planning"]
 
-        Config["instance/config.py"]
-        Env[".env\n>Secrets & Config"]
-        Run["run.py\n>Entry Point"]
-    end
+    %% === LLM Subsystem ===
+    PromptEngine["prompt_engine.py\n>Human-like\n>dynamic prompts"]
+    Providers["providers.py\n>LLM abstraction\n(OpenAI, etc.)"]
 
-    %% Connections
-    Run --> Events
-    Events --> Routes
-    Events --> LLM
-    Events --> Conversation
-    LLM --> Providers
-    LLM --> PromptEngine
-    LLM --> Utils
-    Conversation --> Memory
-    Conversation --> Thinking
-    Events --> Templates
-    Run --> Config
-    Run --> Env
+    %% === External Services ===
+    STT["Speech-to-Text\n(e.g., Whisper API)"]
+    TTS["Text-to-Speech\n(e.g., ElevenLabs)"]
+    LLM["LLM Provider\n(e.g., OpenAI GPT-4)"]
+
+    %% === Configuration ===
+    Env[".env\n>Secrets\n>API keys"]
+    Config["instance/config.py\n>Flask settings"]
+
+    %% === Data Flow ===
+    User -->|Voice| Frontend
+    Frontend -->|WebSocket / HTTP| Routes
+    Routes --> Events
+
+    Events -->|Read/Write| Memory
+    Events -->|Invoke| Thinking
+    Events -->|Build prompt| PromptEngine
+    PromptEngine -->|Send to| Providers
+    Providers -->|Call| LLM
+    LLM -->|Return| Providers
+    Providers -->|Parse & return| Events
+
+    Events -->|Send text| TTS
+    TTS -->|Audio stream| Frontend
+    Frontend -->|Play| User
+
+    Frontend -->|Send audio| STT
+    STT -->|Return text| Events
+
+    WebServer --> Env
+    WebServer --> Config
 ```
 ## Ai-Voice-Interviewer
 Ai Powered Voice Interview System 
