@@ -8,7 +8,7 @@ At its core, the system uses events.py as the main integration point, coordinati
   <img src="https://github.com/user-attachments/assets/dab186ce-892e-4787-a18f-76db880baa2b" alt="Diagram 2" height="400px" />
 </p>
 
-# 🚨 Things to Remember
+**Things to Remember**
 ###  1. Render.com Deployment (Test URL Only)
    https://ai-voice-interviewer-1.onrender.com/
 
@@ -29,7 +29,7 @@ To ensure smooth testing and optimal results when running locally:
 ✅ Avoid background noise to improve speech recognition.
 
 
-## Key Features of This Architecture:
+**Key Features of This Architecture**
 ### Event-driven core:
 - events.py coordinates real-time voice interaction.
 ### Stateful conversation:
@@ -44,7 +44,7 @@ To ensure smooth testing and optimal results when running locally:
 - Secrets in .env, app config in instance/.
 
 
-## 🚀 Local Project Setup
+**🚀 Local Project Setup**
 
 Follow the steps below to run the project locally:
 
@@ -68,7 +68,7 @@ pip install -r requirements.txt
 python run.py
 ```
 
-## Project Architecture Structure
+**Project Architecture Structure**
 ```mermaid
 graph TD
     subgraph "Voice AI Interviewer"
@@ -112,7 +112,7 @@ graph TD
     Run --> Config
     Run --> Env
 ```
-## Ai-Voice-Interviewer
+**Ai-Voice-Interviewer** 
 Ai Powered Voice Interview System 
       Certainly! Below is a realistic engineering architecture diagram in Mermaid format that reflects not just the file structure, but the runtime components, data flow, and system interactions of the Voice AI Interviewer—as it would operate in a production-like environment.
 
@@ -180,6 +180,6 @@ graph TD
     WebServer --> Config
 ```
 
-# Conclusion
+**Conclusion** 
       The Voice AI Interviewer delivers a realistic, voice-driven interview experience by combining dynamic conversation memory, human-like prompting, and simulated thinking behavior—all orchestrated through a clean, modular architecture. Built for extensibility and grounded in real engineering practices, it’s a practical step toward intelligent, empathetic AI interviewers.
 
