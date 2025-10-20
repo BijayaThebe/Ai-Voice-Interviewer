@@ -12,21 +12,21 @@ At its core, the system uses events.py as the main integration point, coordinati
 ###  1. Render.com Deployment (Test URL Only)
    https://ai-voice-interviewer-1.onrender.com/
 
-The hosted URL on Render.com is meant only for testing purposes.
+- The hosted URL on Render.com is meant only for testing purposes.
 
-It may be slow and might not return accurate or real-time responses.
+- It may be slow and might not return accurate or real-time responses.
 
-For the best performance and full functionality, use the local setup instead.
+- For the best performance and full functionality, use the local setup instead.
 
 ### 2. Local Testing Requirements
 
 To ensure smooth testing and optimal results when running locally:
 
-✅ Use a high-performance laptop or PC (fast CPU, enough RAM).
+- Use a high-performance laptop or PC (fast CPU, enough RAM).
 
-✅ Use a good-quality microphone for accurate voice input.
+- Use a good-quality microphone for accurate voice input.
 
-✅ Avoid background noise to improve speech recognition.
+- Avoid background noise to improve speech recognition.
 
 
 # Key Features of This Architecture
@@ -180,6 +180,6 @@ graph TD
     WebServer --> Config
 ```
 
-# Conclusion 
-      The Voice AI Interviewer delivers a realistic, voice-driven interview experience by combining dynamic conversation memory, human-like prompting, and simulated thinking behavior—all orchestrated through a clean, modular architecture. Built for extensibility and grounded in real engineering practices, it’s a practical step toward intelligent, empathetic AI interviewers.
+## Conclusion 
+The Voice AI Interviewer delivers a realistic, voice-driven interview experience by combining dynamic conversation memory, human-like prompting, and simulated thinking behavior—all orchestrated through a clean, modular architecture. Built for extensibility and grounded in real engineering practices, it’s a practical step toward intelligent, empathetic AI interviewers.
 
