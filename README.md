@@ -4,19 +4,43 @@
 
 At its core, the system uses events.py as the main integration point, coordinating voice input/output, LLM responses, and real-time conversation logic. The new conversation/ module handles interview state, memory, and even simulates natural “thinking” pauses to create a more authentic experience. Meanwhile, prompt_engine.py provides carefully designed, human-like prompts that guide the AI toward engaging, relevant, and adaptive dialogue.
 
+<img width="1066" height="896" alt="image" src="https://github.com/user-attachments/assets/93fbd0d2-b2a8-4a6e-88af-5d9b43b36155" />
+<img width="767" height="839" alt="image" src="https://github.com/user-attachments/assets/dab186ce-892e-4787-a18f-76db880baa2b" />
+
+# 🚨 Things to Remember
+###  1. Render.com Deployment (Test URL Only)
+   https://ai-voice-interviewer-1.onrender.com/
+
+The hosted URL on Render.com is meant only for testing purposes.
+
+It may be slow and might not return accurate or real-time responses.
+
+For the best performance and full functionality, use the local setup instead.
+
+### 2. Local Testing Requirements
+
+To ensure smooth testing and optimal results when running locally:
+
+✅ Use a high-performance laptop or PC (fast CPU, enough RAM).
+
+✅ Use a good-quality microphone for accurate voice input.
+
+✅ Avoid background noise to improve speech recognition.
+
+
 ## Key Features of This Architecture:
 ### Event-driven core:
-events.py coordinates real-time voice interaction.
+- events.py coordinates real-time voice interaction.
 ### Stateful conversation:
-Memory persists across turns to enable intelligent follow-ups.
+- Memory persists across turns to enable intelligent follow-ups.
 ### Pluggable LLMs:
-providers.py abstracts model backends.
+- providers.py abstracts model backends.
 ### Human-like pacing:
-thinking_simulator.py adds natural delays.
+- thinking_simulator.py adds natural delays.
 ### Full voice pipeline:
-STT → LLM → TTS → user.
+- User → STT → LLM → TTS → user
 ### Secure config: 
-Secrets in .env, app config in instance/.
+- Secrets in .env, app config in instance/.
 
 
 ## 🚀 Local Project Setup
@@ -93,13 +117,13 @@ Ai Powered Voice Interview System
 
 This version models:
 
-### User interaction (voice input/output),
-### Web server (Flask),
-### Event-driven orchestration,
-### LLM integration,
-### Conversation state management,
-### External services (e.g., speech-to-text, text-to-speech),
-### Configuration and secrets.
+- User interaction (voice input/output),
+- Web server (Flask),
+- Event-driven orchestration,
+- LLM integration,
+- Conversation state management,
+- External services (e.g., speech-to-text, text-to-speech),
+- Configuration and secrets.
 
 ```mermaid
 graph TD
@@ -154,4 +178,7 @@ graph TD
     WebServer --> Env
     WebServer --> Config
 ```
+
+# Conclusion
+      The Voice AI Interviewer delivers a realistic, voice-driven interview experience by combining dynamic conversation memory, human-like prompting, and simulated thinking behavior—all orchestrated through a clean, modular architecture. Built for extensibility and grounded in real engineering practices, it’s a practical step toward intelligent, empathetic AI interviewers.
 
