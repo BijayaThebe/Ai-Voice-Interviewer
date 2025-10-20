@@ -5,12 +5,18 @@
 At its core, the system uses events.py as the main integration point, coordinating voice input/output, LLM responses, and real-time conversation logic. The new conversation/ module handles interview state, memory, and even simulates natural “thinking” pauses to create a more authentic experience. Meanwhile, prompt_engine.py provides carefully designed, human-like prompts that guide the AI toward engaging, relevant, and adaptive dialogue.
 
 ## Key Features of This Architecture:
-### Event-driven core: events.py coordinates real-time voice interaction.
-### Stateful conversation: Memory persists across turns to enable intelligent follow-ups.
-### Pluggable LLMs: providers.py abstracts model backends.
-### Human-like pacing: thinking_simulator.py adds natural delays.
-### Full voice pipeline: STT → LLM → TTS → user.
-### Secure config: Secrets in .env, app config in instance/.
+### Event-driven core:
+events.py coordinates real-time voice interaction.
+### Stateful conversation:
+Memory persists across turns to enable intelligent follow-ups.
+### Pluggable LLMs:
+providers.py abstracts model backends.
+### Human-like pacing:
+thinking_simulator.py adds natural delays.
+### Full voice pipeline:
+STT → LLM → TTS → user.
+### Secure config: 
+Secrets in .env, app config in instance/.
 
 
 ## 🚀 Local Project Setup
@@ -20,22 +26,24 @@ Follow the steps below to run the project locally:
 ### 1️⃣ Create a Virtual Environment
 ```bash
 python -m venv .venv
+```
 
 ### 2️⃣ Activate the Virtual Environment
 ```bash
 .\.venv\Scripts\activate
+```
 
 ### 3️⃣ Install Dependencies
 ```bash
 pip install -r requirements.txt
+```
 
 ### 4️⃣ Run the Application
 ```bash
 python run.py
-
+```
 
 ## Project Architecture Structure
-
 ```mermaid
 graph TD
     subgraph "Voice AI Interviewer"
@@ -79,7 +87,6 @@ graph TD
     Run --> Config
     Run --> Env
 ```
-
 ## Ai-Voice-Interviewer
 Ai Powered Voice Interview System 
       Certainly! Below is a realistic engineering architecture diagram in Mermaid format that reflects not just the file structure, but the runtime components, data flow, and system interactions of the Voice AI Interviewer—as it would operate in a production-like environment.
